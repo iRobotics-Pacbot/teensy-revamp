@@ -8,6 +8,14 @@ Motor motors[] {{6, 5}, {9, 8}, {11, 10}, {23, 12}};
 Encoder encoders[] {{0, 1}, {2, 3}, {4, 7}, {22, 17}};
 MotorController controllers[] {{motors[0], encoders[0]}, {motors[1], encoders[1]}, {motors[2], encoders[2]}, {motors[3], encoders[3]}};
 
+void motorSetPower(double throttle)
+{
+    for (Motor& motor: motors)
+    {
+        motor.setThrottle(throttle);
+    }
+}
+
 void motorsUpdate() {
     for (MotorController& controller : controllers) {
         controller.update();

@@ -61,28 +61,29 @@ double curr_encoders[4];
 double prev_encoders[4];
 double d_encoders[4];
 void setup() {
-    Serial.begin(115200);
-    Serial5.begin(115200);
+    motorSetPower(1);
+    // Serial.begin(115200);
+    // Serial5.begin(115200);
 
-    imuInit();
-    tofInit();
+    // imuInit();
+    // tofInit();
 
-    Wire.setClock(1000000);
+    // Wire.setClock(1000000);
 
-    delay(5000);
-    while (!imuUpdateReadings()) {
-        Serial.println("Waiting for IMU");
-        delay(100);
-    }
-    targetYaw = imuGetYaw();
+    // delay(5000);
+    // while (!imuUpdateReadings()) {
+    //     Serial.println("Waiting for IMU");
+    //     delay(100);
+    // }
+    // targetYaw = imuGetYaw();
 
-    for(int i = 0; i < 4; i++){
-        curr_encoders[i] = 0;
-        prev_encoders[i] = 0;
-        d_encoders[i] = 0;
-    }
-    hasReset = true;
-    movementDirection = MovementDirection::STOP;
+    // for(int i = 0; i < 4; i++){
+    //     curr_encoders[i] = 0;
+    //     prev_encoders[i] = 0;
+    //     d_encoders[i] = 0;
+    // }
+    // hasReset = true;
+    // movementDirection = MovementDirection::STOP;
 }
 
 void updateDirectionFromSerial();
