@@ -10,10 +10,10 @@ MotorController controllers[] {{motors[0], encoders[0]}, {motors[1], encoders[1]
 
 void motorSetPower(double throttle)
 {
-    for (Motor& motor: motors)
-    {
-        motor.setThrottle(throttle);
-    }
+    motors[0].setThrottle(throttle);
+    motors[1].setThrottle(-throttle);
+    motors[2].setThrottle(throttle);
+    motors[3].setThrottle(-throttle);
 }
 
 void motorsUpdate() {

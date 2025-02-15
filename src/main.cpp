@@ -61,9 +61,10 @@ double curr_encoders[4];
 double prev_encoders[4];
 double d_encoders[4];
 void setup() {
+    delay(5000);
     motorSetPower(1);
     // Serial.begin(115200);
-    // Serial5.begin(115200);
+    // Serial5.begin(115200)
 
     // imuInit();
     // tofInit();
